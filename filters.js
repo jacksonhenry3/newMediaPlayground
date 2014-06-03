@@ -14,9 +14,11 @@ function videoToCanvas() {
 	if (localMediaStream) {
 		ctx.drawImage(video, 0, 0);
 	}
-	modN = document.getElementById('modNumber').value
+
 	filterCanvas(f)
 }
+
+window.setInterval(function(){modN = document.getElementById('modNumber').value},250)
 
 n = navigator
 n.getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia;
