@@ -4,12 +4,6 @@ canvas           = document.querySelector('#liveFeed'),
 	h              = canvas.height,
 	ctx            = canvas.getContext('2d');
 
-var streamVideoToCanvas = function(stream) {
-	// stream user media
-	video.src = window.URL.createObjectURL(stream);
-	// place media on canvas
-	ctx.drawImage(video, 0, 0);
-}
 
 function onCameraFail() {
 	ctx.textAlign = "center";
@@ -20,4 +14,13 @@ function onCameraFail() {
 n = navigator
 n.getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia;
 window.URL = window.URL || window.webkitURL;
-n.getUserMedia({video:true}, streamVideoToCanvas(stream), onCameraFail);
+n.getUserMedia(
+	{video:true}, 
+	function(stream) {
+		// stream user media
+		video.src = window.URL.createObjectURL(stream);
+		// place media on canvas
+		ctx.drawImage(video, 0, 0);
+	},
+	onCameraFail
+);
