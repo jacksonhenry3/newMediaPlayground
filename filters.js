@@ -57,6 +57,7 @@ n.getUserMedia(
   };
    delay = function (pixels, args) {
    	window.setTimeout(function(){delayedctx.putImageData(pixels, 0, 0);},250)
+   	window.setTimeout(function(){delayedctx.clearRect ( 0 , 0 , w , h );},255)
    	var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
 
     var DNow = pixels.data;
