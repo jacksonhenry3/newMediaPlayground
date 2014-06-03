@@ -154,6 +154,17 @@ colorsMod = function (pixels, args) {
   return pixels;
 };
 
+graysMod = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3%modN;
+    }
+    return pixels;
+  };
+
 f = blackWhiteAndInTheMiddle
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
