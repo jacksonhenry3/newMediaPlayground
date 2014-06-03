@@ -121,6 +121,7 @@ colorsMod = function (pixels, args) {
     d[i] = d[i]%100;
     d[i + 1] =  d[i + 1]%100;
     d[i + 2] = d[i + 2]%100;
+  }
   return pixels;
 };
 
