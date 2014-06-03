@@ -192,11 +192,13 @@ darker = function (pixels, args) {
      	row = w*(k-Math.floor(k))
      	if (r+g+b/3>100 && r+g+b/3<110){
      		for (var l=i; l>l-(640*4*10);l = --640*4)
+     		{
 					for (var j = l; j > l-10; j --) {
 	    	 		d[j]   = 0
 						d[j+1] = column
 						d[j+2] = row
 		    	}
+		    }
      }
     }
 
