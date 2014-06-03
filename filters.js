@@ -123,9 +123,9 @@ colorsMod = function (pixels, args) {
     var g = d[i + 1];
     var b = d[i + 2];
     if (r>modN || g>modN || b>modN)
-    	d[i] = r%modN;
-    	d[i + 1] =  g%modN;
-      d[i + 2] = b%modN;
+    	d[i] = 255-r%modN;
+    	d[i + 1] =  255-g%modN;
+      d[i + 2] = 255-b%modN;
   }
   return pixels;
 };
