@@ -3,7 +3,7 @@
     var canvas = document.querySelector('#liveFeed');
     var ctx = canvas.getContext('2d');
     var localMediaStream = null;
-
+    var k = 0
     var onCameraFail = function (e) {
         console.log('Camera did not work.', e);
     };
@@ -40,7 +40,7 @@
           var r = d[i];
           var g = d[i + 1];
           var b = d[i + 2];
-          d[i] = d[i + 1] = d[i + 2] = 255;
+          d[i] = d[i + 1] = d[i + 2] = k;
         }
     return pixels;
   };
