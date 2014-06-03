@@ -2,9 +2,9 @@ var video        = document.querySelector("#vid"),
 canvas           = document.querySelector('#liveFeed'),
 	w              = canvas.width,
 	h              = canvas.height,
-	ctx            = canvas.getContext('2d');
+	ctx            = canvas.getContext('2d'),
 delayedCanvas    = document.querySelector('#delayed'),
-	delayedctx     = delayedCanvas.getContext('2d'),
+	delayedctx     = delayedCanvas.getContext('2d');
 
 
 function onCameraFail() {
@@ -31,7 +31,7 @@ n.getUserMedia(
 		video.src = window.URL.createObjectURL(stream);
 		localMediaStream = stream;
 	},
-	onCameraFail()
+	onCameraFail
 );
 
  var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -67,7 +67,7 @@ n.getUserMedia(
       var b = d[i + 2];
     }
     return delayedData;}
-
+ 
 
   blue = function (pixels, args) {
     var d = pixels.data;
