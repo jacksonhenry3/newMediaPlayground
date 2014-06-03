@@ -18,6 +18,7 @@ function videoToCanvas() {
 		ctx.drawImage(video, 0, 0);
 	}
 	modN = document.getElementById('modNumber').value
+	modN=125
 	filterCanvas(f)
 }
 
@@ -147,9 +148,9 @@ colorsMod = function (pixels, args) {
     var g = d[i + 1];
     var b = d[i + 2];
     if (r>modN || g>modN || b>modN)
-    	d[i] = r%modN;
-    	d[i + 1] =  g%modN;
-      d[i + 2] = b%modN;
+    	d[i] = r+modN;
+    	d[i + 1] =  g+modN;
+      d[i + 2] = b+modN;
   }
   return pixels;
 };
