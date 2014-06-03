@@ -4,7 +4,7 @@ canvas           = document.querySelector('#liveFeed'),
 	h              = canvas.height,
 	ctx            = canvas.getContext('2d');
 
-function streamVideoToCanvas(stream) {
+var streamVideoToCanvas = function(stream) {
 	// stream user media
 	video.src = window.URL.createObjectURL(stream);
 	// place media on canvas
