@@ -61,7 +61,7 @@ n.getUserMedia(
 
     var DNow = pixels.data;
     var DThen = delayedData.data;
-    for (var i = 0; i < d.length; i += 4) {
+    for (var i = 0; i < DNow.length; i += 4) {
       var r1 = DNow[i];
       var g1 = DNow[i + 1];
       var b1 = DNow[i + 2];
