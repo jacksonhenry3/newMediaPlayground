@@ -182,6 +182,22 @@ darker = function (pixels, args) {
     return pixels;
   };
 
+  positionTest = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      k = i/(w*4)
+     	column = Math.ceil(k)
+     	row = w*(k-Math.floor(k))
+     	d[i]=0
+     	d[i+1]=column
+     	d[i+2] = row
+    }
+    return pixels;
+  };
+
 
 f = blackWhiteAndInTheMiddle
 // 60 FPS capture is 16.6ms
