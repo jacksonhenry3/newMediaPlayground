@@ -60,6 +60,11 @@ n.getUserMedia(
     }
     return pixels;
   };
+
+  noFilter = function (pixels, args) {
+    return pixels;
+  };
+
   blackWhiteAndInTheMiddle = function (pixels, args) {
     var d = pixels.data;
     for (var i = 0; i < d.length; i += 4) {
