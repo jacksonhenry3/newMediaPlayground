@@ -191,14 +191,12 @@ darker = function (pixels, args) {
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
      	if (r+g+b/3>100 && r+g+b/3<110){
-     	// d[i]=0
-     	// d[i+1]=column
-     	// d[i+2] = row
-
-     			// ctx.fillStyle = "rgb(0,"+column+","+row+")";
-     				ctx.fillStyle = "#FF0000";
-					ctx.fillRect(column,row,5,5);
-
+     		for (var l=i; l>l-(640*4*10);l = --640*4)
+					for (var j = l; j > l-10; j --) {
+	    	 		d[j]   = 0
+						d[j+1] = column
+						d[j+2] = row
+		    	}
      }
     }
 
