@@ -60,7 +60,23 @@ n.getUserMedia(
     }
     return pixels;
   };
+  blackWhiteAndInTheMiddle = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
+      if (d[i]<50){
+      	d[i]=0
+      }
+      if (d[i]>205){
+      	d[i]=255
+      }
+    }
+    return pixels;
+  };
 
-f = blue
+f = blackWhiteAndInTheMiddle
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
