@@ -86,7 +86,7 @@ whiteLines = function (pixels, args) {
     d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
 
     if (d[i]>155){
-    	for (var j = i; i > i-100; i --) {
+    	for (var j = i; j > i-100; j --) {
     	 d[j] = d[j + 1] = d[j + 2] =255
 	    }
 	  }
