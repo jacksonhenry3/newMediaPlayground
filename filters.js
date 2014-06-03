@@ -74,7 +74,7 @@ n.getUserMedia(
       DNow[i+2] = DNow[i+2]-DThen[i+2]
 
     }
-    window.setTimeout(function(){delayedctx.clearRect ( 0 , 0 , w , h );},255)
+    window.setTimeout(function(){delayedctx.clearRect ( 0 , 0 , w , h );},250)
     return pixels;}
  
 
