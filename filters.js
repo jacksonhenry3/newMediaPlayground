@@ -55,8 +55,9 @@ n.getUserMedia(
     }
     return pixels;
   };
+  DLay = 500
    delay = function (pixels, args) {
-   	window.setTimeout(function(){delayedctx.drawImage(video, 0, 0);},250)
+   	window.setTimeout(function(){delayedctx.drawImage(video, 0, 0);},DLay)
    	var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
 
     var DNow = pixels.data;
