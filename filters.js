@@ -69,9 +69,9 @@ n.getUserMedia(
       var r2 = DThen[i];
       var g2 = DThen[i + 1];
       var b2 = DThen[i + 2];
-      DNow[i] = DNow[i]-DThen[i]
-      DNow[i+1] = DNow[i+1]-DThen[i+1]
-      DNow[i+2] = DNow[i+2]-DThen[i+2]
+      DNow[i] = DNow[i]+DThen[i]
+      DNow[i+1] = DNow[i+1]+DThen[i+1]
+      DNow[i+2] = DNow[i+2]+DThen[i+2]
 
     }
     return pixels;}
