@@ -119,12 +119,13 @@ whiteLines = function (pixels, args) {
 colorsMod = function (pixels, args) {
   var d = pixels.data;
   for (var i = 0; i < d.length; i += 4) {
-  	var r = d[i]%modN;
-    var g = d[i + 1]%modN;
-    // var b = d[i + 2]%modN;
-    d[i] = r;
-    d[i + 1] =  g;
-    // d[i + 2] = b;
+  	var r = d[i];
+    var g = d[i + 1];
+    var b = d[i + 2];
+    if (r>modN || g>modN || b>modN)
+    	d[i] = r%modN;
+    	d[i + 1] =  g%modN;
+      d[i + 2] = b%modN;
   }
   return pixels;
 };
