@@ -13,7 +13,6 @@
             ctx.drawImage(video, 0, 0);
         }
         filterCanvas(grayscale)
-        
     }
     setInterval(snapshot, 1 );
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -41,16 +40,14 @@
           var r = d[i];
           var g = d[i + 1];
           var b = d[i + 2];
-          d[i] = g
-          d[i+1] = b
-          d[i+2] = r
-          if (r==b) 
-            {
-              ctx.rect(r,b,150,100);
-              ctx.stroke();
-            };
-          
-
+          if (r+g+b/3<127)
+          {
+            d[i] = d[i + 1] = d[i + 2] = 0;
+          };
+          if (r+g+b/3>127)
+          {
+            d[i] = d[i + 1] = d[i + 2] = 255;
+          };
         }
     return pixels;
   };
