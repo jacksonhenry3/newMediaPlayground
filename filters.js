@@ -3,6 +3,9 @@ canvas           = document.querySelector('#liveFeed'),
 	w              = canvas.width,
 	h              = canvas.height,
 	ctx            = canvas.getContext('2d');
+delayedCanvas    = document.querySelector('#delayed'),
+	delayedctx     = delayedCanvas.getContext('2d'),
+
 
 function onCameraFail() {
 	ctx.textAlign = "center";
@@ -53,14 +56,17 @@ n.getUserMedia(
     return pixels;
   };
    delay = function (pixels, args) {
-   	window.setTimeout(function(){
-    var d = pixels.data;
+   	window.setTimeout(function(){delayedctx.putImageData(pixels, 0, 0);},250)
+   	var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
+
+    var DNow = pixels.data;
+    var DThen = delayedData.data;
     for (var i = 0; i < d.length; i += 4) {
       var r = d[i];
       var g = d[i + 1];
       var b = d[i + 2];
     }
-    return pixels;},250)
+    return delayedData;}
   };
 
   blue = function (pixels, args) {
