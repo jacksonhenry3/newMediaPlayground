@@ -191,9 +191,9 @@ darker = function (pixels, args) {
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
      	if (r+g+b/3>100 && r+g+b/3<110){
-     	d[i]=0
-     	d[i+1]=column
-     	d[i+2] = row
+     	// d[i]=0
+     	// d[i+1]=column
+     	// d[i+2] = row
 
      			// ctx.fillStyle = "rgb(0,"+column+","+row+")";
      				ctx.fillStyle = "#FF0000";
