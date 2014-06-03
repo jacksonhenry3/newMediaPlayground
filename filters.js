@@ -99,6 +99,6 @@ whiteLines = function (pixels, args) {
   return pixels;
 };
 
-f = whiteLines
+f = blackWhiteAndInTheMiddle
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
