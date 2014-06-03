@@ -19,8 +19,8 @@ function videoToCanvas() {
 	}
 	modN = document.getElementById('modNumber').value
 	filterCanvas(f)
-	ctx.fillStyle = "#FF0000";
-		ctx.fillRect(0,0,150,75);
+	// ctx.fillStyle = "#FF0000";
+	// 	ctx.fillRect(0,0,150,75);
 }
 
 n = navigator
