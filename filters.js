@@ -67,10 +67,10 @@ n.getUserMedia(
       var g = d[i + 1];
       var b = d[i + 2];
       d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
-      if (d[i]<50){
+      if (d[i]<100){
       	d[i]=0
       }
-      if (d[i]>205){
+      if (d[i]>155){
       	d[i]=255
       }
     }
