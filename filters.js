@@ -30,4 +30,4 @@ n.getUserMedia(
 	onCameraFail
 );
 
-window.setInterval(videoToCanvas,50)
+window.setInterval(videoToCanvas,500)
