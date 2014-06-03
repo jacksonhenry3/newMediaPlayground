@@ -90,7 +90,7 @@ whiteLines = function (pixels, args) {
     var b = d[i + 2];
     d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
 
-    if (d[i]>155){
+    if (d[i]>155&& d[i]<200){
     	for (var j = i; j > i-100; j --) {
     	 d[j] = d[j + 1] = d[j + 2] =255
 	    }
