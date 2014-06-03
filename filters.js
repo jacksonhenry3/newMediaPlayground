@@ -31,7 +31,7 @@ n.getUserMedia(
 		video.src = window.URL.createObjectURL(stream);
 		localMediaStream = stream;
 	},
-	onCameraFail
+	onCameraFail()
 );
 
  var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
