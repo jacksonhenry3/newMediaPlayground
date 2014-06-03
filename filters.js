@@ -29,5 +29,5 @@ n.getUserMedia(
 	},
 	onCameraFail
 );
-
-window.setInterval(videoToCanvas,500)
+// 60 FPS capture is 16.6
+window.setInterval(videoToCanvas,50)
