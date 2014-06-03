@@ -49,7 +49,6 @@ imageData = ctx.getImageData(0,0,w,h);
     var v = 0.2126*r + 0.7152*g + 0.0722*b;
     d[i] = d[i+1] = d[i+2] = v
   }
-  return pixels;
 
 
 var grayData = grayscale(imageData);
