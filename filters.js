@@ -122,8 +122,8 @@ colorsMod = function (pixels, args) {
   var d = pixels.data;
   for (var i = 0; i < d.length; i += 4) {
     d[i] = d[i]%modN;
-    d[i + 1] =  d[i + 1]%modN;
-    d[i + 2] = d[i + 2]%modN;
+    // d[i + 1] =  d[i + 1]%modN;
+    // d[i + 2] = d[i + 2]%modN;
   }
   return pixels;
 };
