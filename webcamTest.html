@@ -49,12 +49,8 @@
           var r = d[i];
           var g = d[i + 1];
           var b = d[i + 2];
-          console.log(r)
-          console.log(g)
-          console.log(b)
-          d[i] += 1
-          d[i+1] = 1
-          d[i+2] = 1
+          console.log(r,g,b)
+          d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
         }
     return pixels;
   };
