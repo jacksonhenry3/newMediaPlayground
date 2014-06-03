@@ -40,7 +40,9 @@
           var r = d[i];
           var g = d[i + 1];
           var b = d[i + 2];
-          d[i] = d[i + 1] = d[i + 2] = k;
+          d[i] = g
+          d[i+1] = b
+          d[i+2] = r
         }
     return pixels;
   };
