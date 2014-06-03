@@ -30,13 +30,13 @@ n.getUserMedia(
 	onCameraFail
 );
 
- var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+ var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
    // apply a filter to the image data contained in the canvas object
   function filterCanvas(filter) {
     if (canvas.width > 0 && canvas.height > 0) {
-      var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+      var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       filter(imageData);
-      context.putImageData(imageData, 0, 0);
+      ctx.putImageData(imageData, 0, 0);
     }
   }
   // grayscale filter using an arithmetic average of the color 
