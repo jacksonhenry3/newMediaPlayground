@@ -40,11 +40,12 @@
           var r = d[i];
           var g = d[i + 1];
           var b = d[i + 2];
-          if (r+g+b/3<document.getElementById('cutoff').value)
+          k = document.getElementById('cutoff').value
+          if (r+g+b/3<k)
           {
             d[i] = d[i + 1] = d[i + 2] = 0;
           };
-          if (r+g+b/3>document.getElementById('cutoff').value)
+          if (r+g+b/3>k)
           {
             d[i] = d[i + 1] = d[i + 2] = 255;
           };
