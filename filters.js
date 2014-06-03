@@ -56,8 +56,7 @@ n.getUserMedia(
     return pixels;
   };
    delay = function (pixels, args) {
-   	window.setTimeout(function(){delayedctx.putImageData(pixels, 0, 0);},250)
-
+   	window.setTimeout(function(){delayedctx.drawImage(video, 0, 0);},250)
    	var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
 
     var DNow = pixels.data;
@@ -74,7 +73,6 @@ n.getUserMedia(
       DNow[i+2] = DNow[i+2]-DThen[i+2]
 
     }
-    window.setTimeout(function(){delayedctx.clearRect ( 0 , 0 , w , h );},250)
     return pixels;}
  
 
