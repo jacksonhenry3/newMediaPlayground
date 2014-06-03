@@ -174,6 +174,10 @@ darker = function (pixels, args) {
       var b = d[i + 2];
       d[i] = d[i + 1] = d[i + 2] = (r+g+b)-modN;
     }
+
+		ctx.fillStyle = "#FF0000";
+		ctx.fillRect(0,0,150,75);
+
     return pixels;
   };
 
