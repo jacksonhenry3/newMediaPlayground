@@ -81,6 +81,22 @@ n.getUserMedia(
     }
     return pixels;
   };
+blackWhiteAndColor = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      // d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
+      if ((r+g+b)/3<100){
+      	 d[i] = d[i + 1] = d[i + 2] =0
+      }
+      if ((r+g+b)/3>155){
+      	 d[i] = d[i + 1] = d[i + 2] =255
+      }
+    }
+    return pixels;
+  };
 
 whiteLines = function (pixels, args) {
   var d = pixels.data;
