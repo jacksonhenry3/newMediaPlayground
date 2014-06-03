@@ -53,7 +53,7 @@ imageData = ctx.getImageData(0,0,w,h);
 
 
 var grayData = grayscale(imageData);
-ctx.putImageData(grayData, 0, 0);}
+ctx.putImageData(grayData, 0, 0);
 };
 // Filters.filterImage(Filters.grayscale,base_image)
 
