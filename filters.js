@@ -14,7 +14,7 @@ function videoToCanvas() {
 	if (localMediaStream) {
 		ctx.drawImage(video, 0, 0);
 	}
-	filterCanvas(grayscale)
+	filterCanvas(f)
 }
 
 n = navigator
@@ -52,6 +52,15 @@ n.getUserMedia(
     return pixels;
   };
 
+  blue = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      d[i] = 0;
+      d[i + 1] = 0;
+    }
+    return pixels;
+  };
 
+f = blue
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
