@@ -115,6 +115,15 @@ whiteLines = function (pixels, args) {
   return pixels;
 };
 
+colorsMod = function (pixels, args) {
+  var d = pixels.data;
+  for (var i = 0; i < d.length; i += 4) {
+    d[i] = d[i]%100;
+    d[i + 1] =  d[i + 1]%100;
+    d[i + 2] = d[i + 2]%100;
+  return pixels;
+};
+
 f = blackWhiteAndInTheMiddle
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
