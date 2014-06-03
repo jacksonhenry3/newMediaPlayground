@@ -67,7 +67,7 @@ n.getUserMedia(
       var b = d[i + 2];
     }
     return delayedData;}
-  };
+
 
   blue = function (pixels, args) {
     var d = pixels.data;
