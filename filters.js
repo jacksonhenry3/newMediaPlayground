@@ -13,6 +13,7 @@
             ctx.drawImage(video, 0, 0);
         }
         filterCanvas(grayscale)
+        
     }
     setInterval(snapshot, 1 );
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
@@ -43,6 +44,13 @@
           d[i] = g
           d[i+1] = b
           d[i+2] = r
+          if (r==b) 
+            {
+              ctx.rect(r,b,150,100);
+              ctx.stroke();
+            };
+          
+
         }
     return pixels;
   };
