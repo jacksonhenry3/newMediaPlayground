@@ -14,11 +14,9 @@ function videoToCanvas() {
 	if (localMediaStream) {
 		ctx.drawImage(video, 0, 0);
 	}
-
+	modN = document.getElementById('modNumber').value
 	filterCanvas(f)
 }
-
-window.setInterval(function(){modN = document.getElementById('modNumber').value},250)
 
 n = navigator
 n.getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia;
@@ -123,10 +121,10 @@ colorsMod = function (pixels, args) {
   for (var i = 0; i < d.length; i += 4) {
   	var r = d[i]%modN;
     var g = d[i + 1]%modN;
-    var b = d[i + 2]%modN;
+    // var b = d[i + 2]%modN;
     d[i] = r;
     d[i + 1] =  g;
-    d[i + 2] = b;
+    // d[i + 2] = b;
   }
   return pixels;
 };
