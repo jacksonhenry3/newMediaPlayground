@@ -11,6 +11,12 @@ function onCameraFail() {
 	ctx.fillText("Camera did not work.",w/2,h/2);
 };
 
+function videoToCanvas() {
+	if (localMediaStream) {
+		ctx.drawImage(video, 0, 0);
+	}
+}
+
 n = navigator
 n.getUserMedia = n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia;
 window.URL = window.URL || window.webkitURL;
@@ -19,8 +25,9 @@ n.getUserMedia(
 	function(stream) {
 		// stream user media
 		video.src = window.URL.createObjectURL(stream);
-		// place media on canvas
-		ctx.drawImage(video, 0, 0);
+		localMediaStream = stream;
 	},
 	onCameraFail
 );
+
+window.setInterval(videoToCanvas,50)
