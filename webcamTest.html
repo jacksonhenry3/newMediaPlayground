@@ -6,13 +6,13 @@
   <body style = 'background-color:#222;'>
     <video autoplay id="vid" style="display:none;">
     </video>
-    <canvas id="liveFeed" width="640" height="480" style="border:1px solid #d3d3d3;margin:0px auto;display:block;margin-top:50px;box-shadow:0px 0 100px 50px rgba(0,0,0,.5);background-color:#EEE;">
+    <canvas id="liveFeed" style="border:1px solid #d3d3d3;margin:0px auto;display:block;margin-top:50px;box-shadow:0px 0 100px 50px rgba(0,0,0,.5);background-color:#EEE;width:80%;">
     </canvas>
-    <canvas id = 'delayed' width="640" height="480" style = 'display:none;'></canvas>
+    <canvas id = 'delayed' style = 'display:none;width:80%;'></canvas>
   </body>
   <script type="text/javascript" src = 'filters.js'>
   </script>
-  <div id = 'buttons'>
+  <div id = 'buttons' style = 'width:80%;'>
   <button onclick = 'f = blackWhiteAndInTheMiddle'>b and w cutoff</button>
   <button onclick = 'f = noFilter'> no filter</button>
   <button onclick = 'f = blue'> blue</button>
