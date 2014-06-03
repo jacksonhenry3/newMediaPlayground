@@ -88,8 +88,9 @@ whiteLines = function (pixels, args) {
     if (d[i]>155){
     	for (var j = i; i > i-100; i --) {
     	 d[j] = d[j + 1] = d[j + 2] =255
-    }
-  }
+	    }
+	  }
+	}
   return pixels;
 };
 
