@@ -90,7 +90,7 @@ whiteLines = function (pixels, args) {
     var b = d[i + 2];
     d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
 
-    if (d[i]>155&& d[i]<200){
+    if (d[i]>A&& d[i]<B){
     	for (var j = i; j > i-100; j --) {
     	 d[j] = d[j + 1] = d[j + 2] =255
 	    }
@@ -102,3 +102,6 @@ whiteLines = function (pixels, args) {
 f = blackWhiteAndInTheMiddle
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
+
+A = 155
+B = 200
