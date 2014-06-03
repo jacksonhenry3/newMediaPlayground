@@ -191,7 +191,7 @@ darker = function (pixels, args) {
       k = i/(w*4)
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
-     	if (r+g+b/3>200){
+     	if (r+g+b/3>100 && r+g+b/3<110){
      	d[i]=0
      	d[i+1]=column
      	d[i+2] = row
