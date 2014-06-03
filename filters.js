@@ -52,6 +52,17 @@ n.getUserMedia(
     }
     return pixels;
   };
+   delay = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3;
+    }
+    window.setTimeout(function(){return pixels;},250)
+    // return pixels;
+  };
 
   blue = function (pixels, args) {
     var d = pixels.data;
@@ -123,9 +134,9 @@ colorsMod = function (pixels, args) {
     var g = d[i + 1];
     var b = d[i + 2];
     if (r>modN || g>modN || b>modN)
-    	d[i] = 255-r%modN;
-    	d[i + 1] =  255-g%modN;
-      d[i + 2] = 255-b%modN;
+    	d[i] = r%modN;
+    	d[i + 1] =  g%modN;
+      d[i + 2] = b%modN;
   }
   return pixels;
 };
