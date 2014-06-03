@@ -12,7 +12,7 @@
         if (localMediaStream) {
             ctx.drawImage(video, 0, 0);
         }
-        filterCanvas(grayscale)
+        // filterCanvas(grayscale)
     }
     setInterval(snapshot, 50 );
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
