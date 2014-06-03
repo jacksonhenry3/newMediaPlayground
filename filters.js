@@ -14,7 +14,7 @@
         }
         filterCanvas(grayscale)
     }
-    setInterval(snapshot, 1 );
+    setInterval(snapshot, 50 );
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 
     window.URL = window.URL || window.webkitURL;
