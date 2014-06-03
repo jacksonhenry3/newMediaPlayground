@@ -19,8 +19,7 @@ function videoToCanvas() {
 	}
 	modN = document.getElementById('modNumber').value
 	filterCanvas(f)
-	// ctx.fillStyle = "#FF0000";
-	// 	ctx.fillRect(0,0,150,75);
+
 }
 
 n = navigator
@@ -195,8 +194,14 @@ darker = function (pixels, args) {
      	d[i]=0
      	d[i+1]=column
      	d[i+2] = row
+
+     			// ctx.fillStyle = "rgb(0,"+column+","+row+")";
+     				ctx.fillStyle = "#FF0000";
+					ctx.fillRect(column,row,5,5);
+
      }
     }
+
     return pixels;
   };
 
