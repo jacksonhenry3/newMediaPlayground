@@ -54,7 +54,7 @@ positionTest = function (pixels, args) {
      column = Math.ceil(k)
      row    = w*(k-Math.floor(k))
      d[i] = d[i+1] = d[i+2] = 0
-     if ((r+g+b)/3>200 && (r+g+b)/3<210)
+     if ((r+g+b)/3>200)
      {
       topLayerCtx.fillStyle = "#FF0000";
       topLayerCtx.fillRect(row,column,20,20);
