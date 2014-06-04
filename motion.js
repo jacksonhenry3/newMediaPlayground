@@ -67,6 +67,7 @@ positionTest = function (pixels)
 	var d = pixels.data;
 	window.places = []
 	j=0
+	PLOPITY = true
 	for (var i = 0; i < d.length; i += 4)
 	{
 		var r  = d[i];
@@ -76,8 +77,9 @@ positionTest = function (pixels)
 		column = Math.ceil(k)
 		row    = w*(k-Math.floor(k))
 		d[i]   = d[i+1] = d[i+2] = 0
-		if ((r+g+b)/3>=254)
+		if ((r+g+b)/3>=254 && PLOPITY == true)
 		{
+			PLOPITY = false
 			// color = [r,g,b]
 			window.places[j] = [row,column]
 			j++
