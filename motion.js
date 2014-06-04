@@ -107,11 +107,12 @@ squared = function (pixels, args) {
       }
       else 
       {
-      	if(Math.abs(row-window.place[0])>50)
-      	{
-      		window.place[0] = row
-      	}
-			window.place[1] = column
+      		if Math.abs(PreviousRow-row)>1
+      		{
+      			row = PreviousRow+(PreviousRow-row)/Math.abs(PreviousRow-row)
+      		}
+			window.place = [row,column]
+			PreviousRow = row
       }
   	}
 };
