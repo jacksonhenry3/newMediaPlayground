@@ -177,7 +177,8 @@ darker = function (pixels, args) {
       var b = d[i + 2];
       d[i] = d[i + 1] = d[i + 2] = (r+g+b)-modN;
     }
-
+    return pixels;
+  };
 
 squared = function (pixels, args) {
     var d = pixels.data;
