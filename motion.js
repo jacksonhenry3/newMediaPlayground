@@ -16,7 +16,7 @@ var video     = document.querySelector("#vid"),
 var lineFunction = d3.svg.line()
                          .x(function(d) { return d.x; })
                          .y(function(d) { return d.y; })
-                         .interpolate("bundle");
+                         .interpolate("linear");
 
 //The SVG Container
 var svgContainer = d3.select("#drawingCanvas")
@@ -150,7 +150,7 @@ squared = function (pixels, args) {
       			column = PreviousCol+(column-PreviousCol)/divider
       		}
 			// window.place = 
-			lineData.push({x:row*2,y:column*2})
+			lineData.push({x:row*1.5,y:column*1.5})
 			PreviousRow = row
 			PreviousCol = column
       }
