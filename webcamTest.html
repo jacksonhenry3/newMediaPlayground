@@ -3,11 +3,13 @@
 	<head>
 		<title>HTML5 Webcam Test</title>
 		<link rel='stylesheet' href='style.css'>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<video autoplay id="vid" style="display:none;"></video>
 		<canvas width = '640' height = '480' id="liveFeed" ></canvas>
 		<canvas width = '640' height = '480' id = 'delayed'></canvas>
+		<svg id = 'vectorMap' width = '640' height = '480'></svg>
 		<div id = 'buttons' style = 'width:80%;'>
 			<button onclick = 'f = noFilter'>no filter</button>
 			<button onclick = 'f = blackWhiteAndInTheMiddle'>b and w cutoff</button>

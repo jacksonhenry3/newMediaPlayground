@@ -191,14 +191,12 @@ darker = function (pixels, args) {
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
      	if (r+g+b/3>100 && r+g+b/3<110){
-     		for (var l=i; l>l-(640*4*10);l = l-(640*4))
-     		{
-					for (var j = l; j > l-10; j --) {
-	    	 		d[j]   = 0
-						d[j+1] = column
-						d[j+2] = row
-		    	}
-		    }
+     		d3.select("#vectorMap")
+					.append("circle")
+					.attr("cx", column)
+					.attr("cy", row)
+					.attr("r", 5)
+					.style("fill", "purple");
      }
     }
 
@@ -212,3 +210,4 @@ window.setInterval(videoToCanvas,50)
 
 A = 100
 B = 110
+
