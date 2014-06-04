@@ -48,11 +48,16 @@ function filterCanvas(filter)
 		for (var i = 0; i < window.places.length; i++) {
 			row = window.places[i][0]
 			column = window.places[i][1]
-			r = window.places[i][2][0]
-			g = window.places[i][2][1]
-			b = window.places[i][2][2]
-			ctx.fillStyle = "rgb("+r+","+g+","+b+")";
-			ctx.fillRect(row,column,2,2);
+			// r = window.places[i][2][0]
+			// g = window.places[i][2][1]
+			// b = window.places[i][2][2]
+			// ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+			// ctx.fillRect(row,column,2,2);
+			context.beginPath();
+			context.arc(row, column, 50, 0, 2 * Math.PI, false);
+			context.fillStyle = 'green';
+			context.fill();
+			context.stroke();
 		};
 	}
 };
@@ -71,9 +76,9 @@ positionTest = function (pixels)
 		column = Math.ceil(k)
 		row    = w*(k-Math.floor(k))
 		d[i]   = d[i+1] = d[i+2] = 0
-		if ((r+g+b)/3>200)
+		if ((r+g+b)/3>250)
 		{
-			color = [r,g,b]
+			// color = [r,g,b]
 			window.places[j] = [row,column,color]
 			j++
 			// ctx.fillStyle = "#FF0000";
