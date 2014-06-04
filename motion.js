@@ -45,12 +45,20 @@ function filterCanvas(filter)
 		var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 		filter(imageData);
 		ctx.putImageData(imageData, 0, 0);
+		for (var i = 0; i < window.places.length; i++) {
+			row = window.places[i][0]
+			column = window.places[i][1]
+			ctx.fillStyle = "#FF0000";
+			ctx.fillRect(row,column,20,20);
+		};
 	}
 };
 
 positionTest = function (pixels)
 {
 	var d = pixels.data;
+	window.places = []
+	j=0
 	for (var i = 0; i < d.length; i += 4)
 	{
 		var r  = d[i];
@@ -62,8 +70,10 @@ positionTest = function (pixels)
 		d[i]   = d[i+1] = d[i+2] = 0
 		if ((r+g+b)/3>200)
 		{
-			topLayerCtx.fillStyle = "#FF0000";
-			topLayerCtx.fillRect(row,column,20,20);
+			window.places[j] = [row,column]
+			j++
+			// ctx.fillStyle = "#FF0000";
+			// ctx.fillRect(row,column,20,20);
 		}
 	}
 	return pixels;
