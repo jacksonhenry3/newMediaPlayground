@@ -16,9 +16,7 @@ function videoToCanvas() {
 	if (localMediaStream) {
 		ctx.drawImage(video, 0, 0);
 	}
-	modN = document.getElementById('modNumber').value
 	filterCanvas(f)
-
 }
 
 n = navigator
