@@ -53,11 +53,11 @@ function filterCanvas(filter)
 			// b = window.places[i][2][2]
 			// ctx.fillStyle = "rgb("+r+","+g+","+b+")";
 			// ctx.fillRect(row,column,2,2);
-			context.beginPath();
-			context.arc(row, column, 50, 0, 2 * Math.PI, false);
-			context.fillStyle = 'green';
-			context.fill();
-			context.stroke();
+			ctx.beginPath();
+			ctx.arc(row, column, 50, 0, 2 * Math.PI, false);
+			ctx.fillStyle = 'green';
+			ctx.fill();
+			ctx.stroke();
 		};
 	}
 };
