@@ -4,6 +4,7 @@ var video     = document.querySelector("#vid"),
 	h         = canvas.height,
 	ctx       = canvas.getContext('2d'),
 	power     = 5;
+	window.place = [0,0]
 function videoToCanvas()
 {
 	if (localMediaStream)
