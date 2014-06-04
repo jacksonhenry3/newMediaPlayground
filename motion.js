@@ -5,6 +5,7 @@ var video     = document.querySelector("#vid"),
 	ctx       = canvas.getContext('2d'),
 	power     = 5;
 	window.place = [0,0]
+	PreviousRow = 0
 function videoToCanvas()
 {
 	if (localMediaStream)
