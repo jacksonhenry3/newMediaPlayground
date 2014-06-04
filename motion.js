@@ -51,7 +51,7 @@ function filterCanvas(filter)
 			r = window.places[i][2][0]
 			g = window.places[i][2][1]
 			b = window.places[i][2][2]
-			ctx.fillStyle = "rgb("+r","+g","+b")";
+			ctx.fillStyle = "rgb("+r+","+g+","+b+")";
 			ctx.fillRect(row,column,2,2);
 		};
 	}
