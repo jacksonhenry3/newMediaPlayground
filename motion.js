@@ -2,7 +2,7 @@ var video     = document.querySelector("#vid"),
 	canvas    = document.querySelector('#liveFeed'),
 	w         = canvas.width,
 	h         = canvas.height,
-	ctx       = canvas.getContext('2d');,
+	ctx       = canvas.getContext('2d'),
 	power     = 5;
 function videoToCanvas()
 {
