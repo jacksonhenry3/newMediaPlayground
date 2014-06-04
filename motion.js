@@ -9,11 +9,7 @@ var video     = document.querySelector("#vid"),
 	PreviousCol = 0
 	divider = 10
 	var lineData = [];
-var lineGraph = svgContainer.append("path")
-                            .attr("d", lineFunction(lineData))
-                            .attr("stroke", "blue")
-                            .attr("stroke-width", 2)
-                            .attr("fill", "none");
+
 
 
 	//This is the accessor function we talked about above
@@ -25,7 +21,11 @@ var lineFunction = d3.svg.line()
 //The SVG Container
 var svgContainer = d3.select("#drawingCanvas")
 
-
+var lineGraph = svgContainer.append("path")
+                            .attr("d", lineFunction(lineData))
+                            .attr("stroke", "blue")
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
 function videoToCanvas()
 {
 	if (localMediaStream)
