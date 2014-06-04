@@ -23,7 +23,7 @@ var svgContainer = d3.select("#drawingCanvas")
 
 var lineGraph = svgContainer.append("path")
                             .attr("d", lineFunction(lineData))
-                            .attr("stroke", "blue")
+                            .attr("stroke", "#42C096")
                             .attr("stroke-width", 2)
                             .attr("fill", "none");
 function videoToCanvas()
