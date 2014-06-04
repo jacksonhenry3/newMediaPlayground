@@ -3,6 +3,8 @@ canvas           = document.querySelector('#liveFeed'),
 	w              = canvas.width,
 	h              = canvas.height,
 	ctx            = canvas.getContext('2d'),
+topLayer         = document.querySelector('#topLayer'),
+	topLayerCtx    = canvas.getContext('2d'),
 delayedCanvas    = document.querySelector('#delayed'),
 	delayedctx     = delayedCanvas.getContext('2d');
 
@@ -184,6 +186,7 @@ darker = function (pixels, args) {
   positionTest = function (pixels, args) {
   	d3.select("#vectorMap").selectAll("circle").remove()
     var d = pixels.data;
+    topLayer.width = topLayer.width;
     for (var i = 0; i < d.length; i += 4) {
       var r = d[i];
       var g = d[i + 1];
@@ -192,8 +195,8 @@ darker = function (pixels, args) {
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
      	if ((r+g+b)/3-200>20){
-     		ctx.fillStyle = "#FF0000";
-				ctx.fillRect(column,row,20,20);
+     		topLayerCtx.fillStyle = "#FF0000";
+				topLayerCtx.fillRect(row,column,20,20);
      }
     }
 
