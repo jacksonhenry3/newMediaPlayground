@@ -6,7 +6,8 @@ var video     = document.querySelector("#vid"),
 	power     = 5;
 	window.place = [0,0]
 	PreviousRow = 0
-	divider = 10
+	PreviousCol = 0
+	divider = 5
 function videoToCanvas()
 {
 	if (localMediaStream)
@@ -112,9 +113,11 @@ squared = function (pixels, args) {
       		if (Math.abs(PreviousRow-row)>1)
       		{
       			row = PreviousRow+(row-PreviousRow)/divider
+      			column = PreviousCol+(column-PreviousCol)/divider
       		}
 			window.place = [row,column]
 			PreviousRow = row
+			PreviousCol = column
       }
   	}
 };
