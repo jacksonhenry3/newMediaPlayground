@@ -182,6 +182,7 @@ darker = function (pixels, args) {
   };
 
   positionTest = function (pixels, args) {
+  	d3.select("#vectorMap").selectAll("circle").remove()
     var d = pixels.data;
     for (var i = 0; i < d.length; i += 4) {
       var r = d[i];
