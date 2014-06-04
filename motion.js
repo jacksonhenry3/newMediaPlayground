@@ -105,6 +105,7 @@ function filterCanvas(filter)
 squared = function (pixels, args) {
     var d = pixels.data;
     whitePixels = [];
+    brightests = 0
     for (var i = 0; i < d.length; i += 4) {
       var r = d[i];
       var g = d[i + 1];
@@ -112,7 +113,11 @@ squared = function (pixels, args) {
       d[i] =Math.pow(r/255,power)*255
       d[i+1] =Math.pow(g/255,power)*255
       d[i+2] =Math.pow(b/255,power)*255
-      if (d[i]+d[i+1]+d[i+2] != 255*3)
+      if (d[i]+d[i+1]+d[i+2]>brightests)
+      {
+      	brightests = i
+      }
+      if (d[i]+d[i+1]+d[i+2] != 250*3)
       {
         d[i]=d[i+1]=d[i+2]=0
       }
@@ -121,6 +126,11 @@ squared = function (pixels, args) {
         whitePixels.push(i)
       }
 
+
+    }
+    if (whitePixels == [])
+    {
+    	whitePixels.push(brightests)
     }
     for (var j = whitePixels.length - 1; j >= 0; j--) {
       i = whitePixels[j]
