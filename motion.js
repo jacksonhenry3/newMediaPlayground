@@ -1,13 +1,8 @@
 var video     = document.querySelector("#vid"),
-	filter    = positionTest,
 	canvas    = document.querySelector('#liveFeed'),
 	w         = canvas.width,
 	h         = canvas.height,
 	ctx       = canvas.getContext('2d');
-
-webcamToVideo()
-
-window.setInterval(videoToCanvas,50)
 
 function videoToCanvas()
 {
@@ -73,6 +68,6 @@ positionTest = function (pixels)
 	}
 	return pixels;
 };
-
-
-
+webcamToVideo()
+window.setInterval(videoToCanvas,50)
+filter = positionTest
