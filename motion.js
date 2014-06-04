@@ -2,8 +2,8 @@ var video     = document.querySelector("#vid"),
 	canvas    = document.querySelector('#liveFeed'),
 	w         = canvas.width,
 	h         = canvas.height,
-	ctx       = canvas.getContext('2d');
-
+	ctx       = canvas.getContext('2d');,
+	power     = 5;
 function videoToCanvas()
 {
 	if (localMediaStream)
@@ -104,13 +104,9 @@ squared = function (pixels, args) {
       {
         d[i]=d[i+1]=d[i+2]=0
       }
-      else
+      else if(Math.abs(row-window.place[0])>15)
       {
-		window.place[1] = column
-		if(Math.abs(row-window.place[0])>15)
-		{
-			window.place[0] = row
-		}
+		window.place = [row,column]
       }
   	}
 };
