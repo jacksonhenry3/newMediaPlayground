@@ -7,6 +7,7 @@ topLayer         = document.getElementById('topLayer'),
 	topLayerCtx    = canvas.getContext('2d'),
 delayedCanvas    = document.querySelector('#delayed'),
 	delayedctx     = delayedCanvas.getContext('2d');
+  power = 3
 
 
 function onCameraFail() {
@@ -186,9 +187,9 @@ squared = function (pixels, args) {
       var r = d[i];
       var g = d[i + 1];
       var b = d[i + 2];
-      d[i] =Math.pow(r/255,2)*255
-      d[i+1] =Math.pow(g/255,2)*255
-      d[i+2] =Math.pow(b/255,2)*255
+      d[i] =Math.pow(r/255,power)*255
+      d[i+1] =Math.pow(g/255,power)*255
+      d[i+2] =Math.pow(b/255,power)*255
 
     }
 
