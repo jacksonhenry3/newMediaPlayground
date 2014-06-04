@@ -137,7 +137,8 @@ squared = function (pixels, args) {
 		row    = w*(k-Math.floor(k))
 		window.place = [row,column]
       }
-    };
+  	}
+};
 webcamToVideo()
 window.setInterval(videoToCanvas,50)
-filter = positionTest
+filter = squared
