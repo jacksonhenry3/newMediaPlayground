@@ -4,10 +4,7 @@ canvas           = document.querySelector('#liveFeed'),
 	h              = canvas.height,
 	ctx            = canvas.getContext('2d'),
 topLayer         = document.getElementById('topLayer'),
-	topLayerCtx    = canvas.getContext('2d'),
-delayedCanvas    = document.querySelector('#delayed'),
-	delayedctx     = delayedCanvas.getContext('2d');
-
+	topLayerCtx    = canvas.getContext('2d');
 
 function onCameraFail() {
 	ctx.textAlign = "center";
