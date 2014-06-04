@@ -24,7 +24,7 @@ var svgContainer = d3.select("#drawingCanvas")
 var lineGraph = svgContainer.append("path")
                             .attr("d", lineFunction(lineData))
                             .attr("stroke", "#42C096")
-                            .attr("stroke-width", 2)
+                            .attr("stroke-width",5)
                             .attr("fill", "none");
 function videoToCanvas()
 {
@@ -92,11 +92,11 @@ function filterCanvas(filter)
 			
 
 			// bezier curve
-			ctx.lineTo(row, column);
+			// ctx.lineTo(row, column);
 
-			ctx.lineWidth = 1;
-			ctx.strokeStyle = 'teal';
-			ctx.stroke();
+			// ctx.lineWidth = 1;
+			// ctx.strokeStyle = 'teal';
+			// ctx.stroke();
 
 	}
 };
