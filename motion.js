@@ -105,7 +105,7 @@ squared = function (pixels, args) {
       {
         d[i]=d[i+1]=d[i+2]=0
       }
-      else if(Math.abs(row-window.place[0])>15)
+      else if(Math.abs(column-window.place[1])>50)
       {
 		window.place = [row,column]
       }
