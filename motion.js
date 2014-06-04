@@ -7,7 +7,21 @@ var video     = document.querySelector("#vid"),
 	window.place = [0,0]
 	PreviousRow = 0
 	PreviousCol = 0
-	divider = 5
+	divider = 10
+	var lineData = [];
+
+
+
+	//This is the accessor function we talked about above
+var lineFunction = d3.svg.line()
+                         .x(function(d) { return d.x; })
+                         .y(function(d) { return d.y; })
+                         .interpolate("basis");
+
+//The SVG Container
+var svgContainer = d3.select("#drawingCanvas")
+
+
 function videoToCanvas()
 {
 	if (localMediaStream)
@@ -15,6 +29,12 @@ function videoToCanvas()
 		ctx.drawImage(video, 0, 0);
 	}
 	filterCanvas(filter)
+	//The line SVG Path we draw
+var lineGraph = svgContainer.append("path")
+                            .attr("d", lineFunction(lineData))
+                            .attr("stroke", "blue")
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
 };
 
 // Steam webcam video to video element
@@ -115,12 +135,25 @@ squared = function (pixels, args) {
       			row = PreviousRow+(row-PreviousRow)/divider
       			column = PreviousCol+(column-PreviousCol)/divider
       		}
-			window.place = [row,column]
+			window.place = 
+			lineData.push({x:row,y:column})
 			PreviousRow = row
 			PreviousCol = column
       }
   	}
 };
+
+
+
+
+
+
+
+
+
+
+
+
 webcamToVideo()
 window.setInterval(videoToCanvas,50)
 filter = squared
