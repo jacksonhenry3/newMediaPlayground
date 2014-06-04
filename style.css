@@ -54,3 +54,13 @@ svg
 	top:-433px;
 	margin:0px auto;
 }
+
+#topLayer
+{
+	display: block;
+	background-color: red;
+	width:640px;
+	margin: 0px auto;
+	position: relative;
+	top:-433px;
+}
