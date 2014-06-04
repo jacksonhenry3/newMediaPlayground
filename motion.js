@@ -76,7 +76,7 @@ positionTest = function (pixels)
 		column = Math.ceil(k)
 		row    = w*(k-Math.floor(k))
 		d[i]   = d[i+1] = d[i+2] = 0
-		if ((r+g+b)/3>250)
+		if ((r+g+b)/3>=254)
 		{
 			// color = [r,g,b]
 			window.places[j] = [row,column]
