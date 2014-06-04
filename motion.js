@@ -29,7 +29,8 @@ function webcamToVideo()
 		onCameraFail
 	);
 };
-
+ctx.beginPath();
+			ctx.moveTo(0, 0);
 function onCameraFail()
 {
 	ctx.textAlign = "center";
@@ -53,7 +54,7 @@ function filterCanvas(filter)
 			// b = window.places[i][2][2]
 			// ctx.fillStyle = "rgb("+r+","+g+","+b+")";
 			// ctx.fillRect(row,column,2,2);
-			
+
 			// ctx.beginPath();
 			// ctx.arc(row, column, 50, 0, 2 * Math.PI, false);
 			// ctx.fillStyle = 'green';
@@ -61,8 +62,7 @@ function filterCanvas(filter)
 			// ctx.stroke();
 
 
-			ctx.beginPath();
-			// ctx.moveTo(100, 20);
+			
 
 			// bezier curve
 			ctx.lineTo(column, row);
