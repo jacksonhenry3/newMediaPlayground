@@ -99,15 +99,18 @@ squared = function (pixels, args) {
       k      = i/(w*4)
 	  column = Math.ceil(k)
 	  row    = w*(k-Math.floor(k))
-	  
+
       if (j != Math.floor(whitePixels.length/2))
       {
         d[i]=d[i+1]=d[i+2]=0
       }
       else
       {
-      	
-		window.place = [row,column]
+		window.place[1] = column
+		if(Math.abs(row-window.place[0])>15)
+		{
+			window.place[0] = row
+		}
       }
   	}
 };
