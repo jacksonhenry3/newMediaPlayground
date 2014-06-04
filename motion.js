@@ -79,7 +79,7 @@ positionTest = function (pixels)
 		if ((r+g+b)/3>250)
 		{
 			// color = [r,g,b]
-			window.places[j] = [row,column,color]
+			window.places[j] = [row,column]
 			j++
 			// ctx.fillStyle = "#FF0000";
 			// ctx.fillRect(row,column,20,20);
