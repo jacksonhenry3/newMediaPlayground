@@ -74,7 +74,7 @@ positionTest = function (pixels)
 		var g  = d[i + 1];
 		var b  = d[i + 2];
 		k      = i/(w*4)
-		column = Math.ceil(k)
+		column = w-Math.ceil(k)
 		row    = w*(k-Math.floor(k))
 		d[i]   = d[i+1] = d[i+2] = 0
 		if ((r+g+b)/3>=254 && PLOPITY == true)
