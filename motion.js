@@ -7,7 +7,7 @@ var video     = document.querySelector("#vid"),
 	window.place = [0,0]
 	PreviousRow = 0
 	PreviousCol = 0
-	divider = 10
+	divider = 5
 	var lineData = [];
 
 
@@ -34,7 +34,7 @@ function videoToCanvas()
 	}
 	filterCanvas(filter)
 	//The line SVG Path we draw
-	if (lineData.length>50)
+	if (lineData.length>5)
 	{
 		lineData.shift()
 	}
