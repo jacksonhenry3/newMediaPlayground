@@ -64,7 +64,7 @@ function filterCanvas(filter)
 			
 
 			// bezier curve
-			ctx.lineTo(320, column);
+			ctx.lineTo(row, column);
 
 			ctx.lineWidth = 5;
 			ctx.strokeStyle = 'blue';
@@ -73,33 +73,6 @@ function filterCanvas(filter)
 	}
 };
 
-positionTest = function (pixels)
-{
-	var d = pixels.data;
-	window.places = []
-	j=0
-	PLOPITY = true
-	for (var i = 0; i < d.length; i += 4)
-	{
-		var r  = d[i];
-		var g  = d[i + 1];
-		var b  = d[i + 2];
-		k      = i/(w*4)
-		column = Math.ceil(k)
-		row    = w*(k-Math.floor(k))
-		// d[i]   = d[i+1] = d[i+2] = 0
-		if ((r+g+b)/3>=254 && PLOPITY == true)
-		{
-			PLOPITY = false
-			// color = [r,g,b]
-			window.places[j] = [row,column]
-			j++
-			// ctx.fillStyle = "#FF0000";
-			// ctx.fillRect(row,column,20,20);
-		}
-	}
-	return pixels;
-};
 
 squared = function (pixels, args) {
     var d = pixels.data;
@@ -123,15 +96,17 @@ squared = function (pixels, args) {
     }
     for (var j = whitePixels.length - 1; j >= 0; j--) {
       i = whitePixels[j]
+      k      = i/(w*4)
+	  column = Math.ceil(k)
+	  row    = w*(k-Math.floor(k))
+	  
       if (j != Math.floor(whitePixels.length/2))
       {
         d[i]=d[i+1]=d[i+2]=0
       }
       else
       {
-      	k      = i/(w*4)
-		column = Math.ceil(k)
-		row    = w*(k-Math.floor(k))
+      	
 		window.place = [row,column]
       }
   	}
