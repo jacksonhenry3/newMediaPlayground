@@ -16,7 +16,7 @@ var video     = document.querySelector("#vid"),
 var lineFunction = d3.svg.line()
                          .x(function(d) { return d.x; })
                          .y(function(d) { return d.y; })
-                         .interpolate("basis");
+                         .interpolate("bundle");
 
 //The SVG Container
 var svgContainer = d3.select("#drawingCanvas")
@@ -34,7 +34,7 @@ function videoToCanvas()
 	}
 	filterCanvas(filter)
 	//The line SVG Path we draw
-	if (lineData.length>5)
+	if (lineData.length>10)
 	{
 		lineData.shift()
 	}
