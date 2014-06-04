@@ -60,6 +60,7 @@ positionTest = function (pixels, args) {
      row    = w*(k-Math.floor(k))
      d[i] = d[i+1] = d[i+2] = 0
      if ((r+g+b)/3>200 && (r+g+b)/3<210)
+     {
       topLayerCtx.fillStyle = "#FF0000";
       topLayerCtx.fillRect(row,column,20,20);
     }
