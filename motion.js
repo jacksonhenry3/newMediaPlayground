@@ -6,6 +6,7 @@ var video     = document.querySelector("#vid"),
 	power     = 5;
 	window.place = [0,0]
 	PreviousRow = 0
+	divider = 10
 function videoToCanvas()
 {
 	if (localMediaStream)
@@ -110,7 +111,7 @@ squared = function (pixels, args) {
       {
       		if (Math.abs(PreviousRow-row)>1)
       		{
-      			row = PreviousRow+(row-PreviousRow)/Math.abs(PreviousRow-row)
+      			row = PreviousRow+(row-PreviousRow)/divider
       		}
 			window.place = [row,column]
 			PreviousRow = row
