@@ -22,9 +22,18 @@ button
 {
 	width:20%;
 	padding:10px;
+	margin-bottom:3px;
 }
 
 input
 {
 	width:20%;
+	margin:0px;
+}
+#buttons
+{
+width:640px;
+margin:0px auto;
+margin-top:50px;
+text-align: center;
 }

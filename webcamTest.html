@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>HTML5 Webcam Test</title>
-    <link rel='stylesheet' href='style.css'>
-  </head>
-  <body>
-    <video autoplay id="vid" style="display:none;">
-    </video>
-    <canvas width = '640' height = '480' id="liveFeed" >
-    </canvas>
-    <canvas width = '640' height = '480' id = 'delayed'></canvas>
-  </body>
-  <script type="text/javascript" src = 'filters.js'>
-  </script>
-  <div id = 'buttons' style = 'width:80%;'>
-  <button onclick = 'f = noFilter'> no filter</button>
-  <button onclick = 'f = blackWhiteAndInTheMiddle'>b and w cutoff</button>
-  <!-- <button onclick = 'f = blue'> blue</button> -->
-  
-  <!-- <button onclick = 'f = grayscale'> grayscale</button> -->
-  <button onclick = 'f = blackWhiteAndColor'>BW And Color</button>
-  <button onclick = 'f = whiteLines'>white lines</button>
-  <button onclick = 'f = delay'>delay</button>
-  <button onclick = 'f = colorsMod'>mod colors</button>
-  <button onclick = 'f = graysMod'>mod grey</button>
-  <!-- <button onclick = 'f = darker'>darker</button> -->
-  <input id = 'modNumber' type = 'range' min = '0' max = '255'></input>
-</div>
-<style type="text/css">
-#buttons
-{
-  width:640px;
-  margin:0px auto;
-  margin-top:50px;
-  text-align: center;
-}
-</style>
+	<head>
+		<title>HTML5 Webcam Test</title>
+		<link rel='stylesheet' href='style.css'>
+	</head>
+	<body>
+		<video autoplay id="vid" style="display:none;"></video>
+		<canvas width = '640' height = '480' id="liveFeed" ></canvas>
+		<canvas width = '640' height = '480' id = 'delayed'></canvas>
+		<div id = 'buttons' style = 'width:80%;'>
+			<button onclick = 'f = noFilter'>no filter</button>
+			<button onclick = 'f = blackWhiteAndInTheMiddle'>b and w cutoff</button>
+			<!-- <button onclick = 'f = blue'> blue</button> -->
+			<!-- <button onclick = 'f = grayscale'> grayscale</button> -->
+			<!-- <button onclick = 'f = darker'>darker</button> -->
+			<button onclick = 'f = blackWhiteAndColor'>BW And Color</button>
+			<button onclick = 'f = whiteLines'>white lines</button>
+			<button onclick = 'f = delay'>delay</button>
+			<button onclick = 'f = colorsMod'>mod colors</button>
+			<button onclick = 'f = graysMod'>mod grey</button>
+			<input id = 'modNumber' type = 'range' min = '0' max = '255'></input>
+		</div>
+	</body>
+	<script type="text/javascript" src = 'filters.js'></script>
 </html>
