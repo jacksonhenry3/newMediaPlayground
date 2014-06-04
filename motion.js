@@ -70,7 +70,10 @@ function filterCanvas(filter)
 			ctx.lineWidth = 5;
 			ctx.strokeStyle = 'blue';
 			ctx.stroke();
-
+			if (clear ==true)
+			{
+				ctx.putImageData(imageData, 0, 0);
+			}
 
 		};
 	}
