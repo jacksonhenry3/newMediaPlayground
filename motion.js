@@ -47,8 +47,8 @@ function filterCanvas(filter)
 		filter(imageData);
 		ctx.putImageData(imageData, 0, 0);
 		for (var i = 0; i < window.places.length; i++) {
-			row = window.places[i][0]
-			column = window.places[i][1]
+			row = window.place[0]
+			column = window.place[1]
 			// r = window.places[i][2][0]
 			// g = window.places[i][2][1]
 			// b = window.places[i][2][2]
@@ -65,7 +65,7 @@ function filterCanvas(filter)
 			
 
 			// bezier curve
-			ctx.lineTo(row, column);
+			ctx.lineTo(320, column);
 
 			ctx.lineWidth = 5;
 			ctx.strokeStyle = 'blue';
@@ -103,6 +103,41 @@ positionTest = function (pixels)
 	}
 	return pixels;
 };
+
+squared = function (pixels, args) {
+    var d = pixels.data;
+    whitePixels = [];
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      d[i] =Math.pow(r/255,power)*255
+      d[i+1] =Math.pow(g/255,power)*255
+      d[i+2] =Math.pow(b/255,power)*255
+      if (d[i]+d[i+1]+d[i+2] != 255*3)
+      {
+        d[i]=d[i+1]=d[i+2]=0
+      }
+      else
+      {
+        whitePixels.push(i)
+      }
+
+    }
+    for (var j = whitePixels.length - 1; j >= 0; j--) {
+      i = whitePixels[j]
+      if (j != Math.floor(whitePixels.length/2))
+      {
+        d[i]=d[i+1]=d[i+2]=0
+      }
+      else
+      {
+      	k      = i/(w*4)
+		column = Math.ceil(k)
+		row    = w*(k-Math.floor(k))
+		window.place = [row,column]
+      }
+    };
 webcamToVideo()
 window.setInterval(videoToCanvas,50)
 filter = positionTest
