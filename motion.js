@@ -70,8 +70,8 @@ function filterCanvas(filter)
 			// bezier curve
 			ctx.lineTo(row, column);
 
-			ctx.lineWidth = 5;
-			ctx.strokeStyle = 'blue';
+			ctx.lineWidth = 1;
+			ctx.strokeStyle = 'teal';
 			ctx.stroke();
 
 	}
@@ -102,11 +102,11 @@ squared = function (pixels, args) {
       i = whitePixels[j]
       k      = i/(w*4)
 	  column = Math.ceil(k)
-	  row    = w*(k-Math.floor(k))
+	  row    = w-w*(k-Math.floor(k))
 
       if (j != Math.floor(whitePixels.length/2))
       {
-        d[i]=d[i+1]=d[i+2]=0
+        d[i]=d[i+1]=d[i+2]=255
       }
       else 
       {
