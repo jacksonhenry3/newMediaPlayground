@@ -192,12 +192,8 @@ darker = function (pixels, args) {
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
      	if ((r+g+b)/3-200>20){
-     		d3.select("#vectorMap")
-					.append("circle")
-					.attr("cx", column)
-					.attr("cy", row)
-					.attr("r", 5)
-					.style("fill", "purple");
+     		ctx.fillStyle = "#FF0000";
+				ctx.fillRect(column,row,20,20);
      }
     }
 
