@@ -110,7 +110,7 @@ squared = function (pixels, args) {
       {
       		if (Math.abs(PreviousRow-row)>1)
       		{
-      			row = PreviousRow+(PreviousRow-row)/Math.abs(PreviousRow-row)
+      			row = PreviousRow+(row-PreviousRow)/Math.abs(PreviousRow-row)
       		}
 			window.place = [row,column]
 			PreviousRow = row
