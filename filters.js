@@ -61,8 +61,8 @@ n.getUserMedia(
   };
   DLay = 1
    delay = function (pixels, args) {
-   	window.setTimeout(function(){delayedctx.drawImage(video, 0, 0);},DLay)
-   	var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
+    window.setTimeout(function(){delayedctx.drawImage(video, 0, 0);},DLay)
+    var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
 
     var DNow = pixels.data;
     var DThen = delayedData.data;
@@ -76,6 +76,26 @@ n.getUserMedia(
       DNow[i] = DNow[i]-DThen[i]
       DNow[i+1] = DNow[i+1]-DThen[i+1]
       DNow[i+2] = DNow[i+2]-DThen[i+2]
+
+    }
+    return pixels;}
+
+   delayMultiply = function (pixels, args) {
+    window.setTimeout(function(){delayedctx.drawImage(video, 0, 0);},DLay)
+    var delayedData = delayedctx.getImageData(0, 0, canvas.width, canvas.height);
+
+    var DNow = pixels.data;
+    var DThen = delayedData.data;
+    for (var i = 0; i < DNow.length; i += 4) {
+      var r1 = DNow[i];
+      var g1 = DNow[i + 1];
+      var b1 = DNow[i + 2];
+      var r2 = DThen[i];
+      var g2 = DThen[i + 1];
+      var b2 = DThen[i + 2];
+      DNow[i] = DNow[i]*DThen[i]/255
+      DNow[i+1] = DNow[i+1]*DThen[i+1]/255
+      DNow[i+2] = DNow[i+2]*DThen[i+2]/255
 
     }
     return pixels;}
