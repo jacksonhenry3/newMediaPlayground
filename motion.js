@@ -9,7 +9,11 @@ var video     = document.querySelector("#vid"),
 	PreviousCol = 0
 	divider = 10
 	var lineData = [];
-
+var lineGraph = svgContainer.append("path")
+                            .attr("d", lineFunction(lineData))
+                            .attr("stroke", "blue")
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
 
 
 	//This is the accessor function we talked about above
@@ -30,11 +34,11 @@ function videoToCanvas()
 	}
 	filterCanvas(filter)
 	//The line SVG Path we draw
-var lineGraph = svgContainer.append("path")
-                            .attr("d", lineFunction(lineData))
-                            .attr("stroke", "blue")
-                            .attr("stroke-width", 2)
-                            .attr("fill", "none");
+	if (lineData.length>50)
+	{
+		lineData.shift()
+	}
+	lineGraph.attr("d", lineFunction(lineData));
 };
 
 // Steam webcam video to video element
