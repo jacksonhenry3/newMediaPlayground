@@ -107,7 +107,7 @@ squared = function (pixels, args) {
       }
       else 
       {
-      		if Math.abs(PreviousRow-row)>1
+      		if (Math.abs(PreviousRow-row)>1)
       		{
       			row = PreviousRow+(PreviousRow-row)/Math.abs(PreviousRow-row)
       		}
