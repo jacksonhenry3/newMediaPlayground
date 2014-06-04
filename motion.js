@@ -3,7 +3,7 @@ var video     = document.querySelector("#vid"),
 	w         = canvas.width,
 	h         = canvas.height,
 	ctx       = canvas.getContext('2d');
-
+clear = false
 function videoToCanvas()
 {
 	if (localMediaStream)
