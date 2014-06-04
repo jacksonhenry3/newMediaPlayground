@@ -67,7 +67,7 @@ positionTest = function (pixels, args) {
 };
 
 
-f = blackWhiteAndInTheMiddle
+f = positionTest
 // 60 FPS capture is 16.6ms
 window.setInterval(videoToCanvas,50)
 
