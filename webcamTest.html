@@ -13,15 +13,21 @@
   <script type="text/javascript" src = 'filters.js'>
   </script>
   <div id = 'buttons' style = 'width:80%;'>
-  <button onclick = 'f = blackWhiteAndInTheMiddle'>b and w cutoff</button>
-  <button onclick = 'f = noFilter'> no filter</button>
-  <button onclick = 'f = blue'> blue</button>
-  <button onclick = 'f = whiteLines'>white lines</button>
-  <button onclick = 'f = grayscale'> grayscale</button>
-  <button onclick = 'f = blackWhiteAndColor'>black White And Color</button>
-  <button onclick = 'f = delay'>delay</button>
-  <button onclick = 'f = colorsMod'>mod colors</button>
-  <button onclick = 'f = graysMod'>mod grey</button>
+
+  <form action="">
+  <select name="Filters">
+      <option onclick = 'f = blackWhiteAndInTheMiddle'>b and w cutoff</option>
+  <option onclick = 'f = noFilter'> no filter</option>
+  <option onclick = 'f = blue'> blue</option>
+  <option onclick = 'f = whiteLines'>white lines</option>
+  <option onclick = 'f = grayscale'> grayscale</option>
+  <option onclick = 'f = blackWhiteAndColor'>black White And Color</option>
+  <option onclick = 'f = delay'>delay</option>
+  <option onclick = 'f = colorsMod'>mod colors</option>
+  <option onclick = 'f = graysMod'>mod grey</option>
+  </select>
+  </form>
+  
   <!-- <button onclick = 'f = darker'>darker</button> -->
   <input id = 'modNumber' type = 'range' min = '0' max = '255'></input>
 </div>
