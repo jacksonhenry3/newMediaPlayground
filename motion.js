@@ -93,8 +93,8 @@ positionTest = function (pixels)
 		k      = i/(w*4)
 		column = Math.ceil(k)
 		row    = w-w*(k-Math.floor(k))
-		d[i]   = d[i+1] = d[i+2] = 0
-		if ((r+g+b)/3>=254 && PLOPITY == true)
+		// d[i]   = d[i+1] = d[i+2] = 0
+		if ((r+g+b)/3==255 && PLOPITY == true)
 		{
 			PLOPITY = false
 			// color = [r,g,b]
