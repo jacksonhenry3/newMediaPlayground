@@ -178,6 +178,19 @@ darker = function (pixels, args) {
       d[i] = d[i + 1] = d[i + 2] = (r+g+b)-modN;
     }
 
+
+squared = function (pixels, args) {
+    var d = pixels.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i];
+      var g = d[i + 1];
+      var b = d[i + 2];
+      d[i] =Math.Pow(r/255,2)*255
+      d[i+1] =Math.Pow(g/255,2)*255
+      d[i+2] =Math.Pow(b/255,2)*255
+
+    }
+
 		
 
     return pixels;
