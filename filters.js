@@ -192,7 +192,7 @@ squared = function (pixels, args) {
       d[i+1] =Math.pow(g/255,power)*255
       d[i+2] =Math.pow(b/255,power)*255
       if (d[i]+d[i+1]+d[i+2]<20)
-        {d[i]=d[i=1]=d[i+2]=0};
+        {d[i]=d[i+1]=d[i+2]=0};
   }
 
     return pixels;
