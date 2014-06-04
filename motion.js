@@ -3,7 +3,7 @@ var video     = document.querySelector("#vid"),
 	w         = canvas.width,
 	h         = canvas.height,
 	ctx       = canvas.getContext('2d');
-clear = false
+
 function videoToCanvas()
 {
 	if (localMediaStream)
@@ -70,10 +70,7 @@ function filterCanvas(filter)
 			ctx.lineWidth = 5;
 			ctx.strokeStyle = 'blue';
 			ctx.stroke();
-			if (clear ==true)
-			{
-				ctx.putImageData(imageData, 0, 0);
-			}
+
 
 		};
 	}
@@ -93,8 +90,8 @@ positionTest = function (pixels)
 		k      = i/(w*4)
 		column = Math.ceil(k)
 		row    = w-w*(k-Math.floor(k))
-		// d[i]   = d[i+1] = d[i+2] = 0
-		if ((r+g+b)/3==255 && PLOPITY == true)
+		d[i]   = d[i+1] = d[i+2] = 0
+		if ((r+g+b)/3>=254 && PLOPITY == true)
 		{
 			PLOPITY = false
 			// color = [r,g,b]
