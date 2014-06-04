@@ -53,11 +53,25 @@ function filterCanvas(filter)
 			// b = window.places[i][2][2]
 			// ctx.fillStyle = "rgb("+r+","+g+","+b+")";
 			// ctx.fillRect(row,column,2,2);
+			
+			// ctx.beginPath();
+			// ctx.arc(row, column, 50, 0, 2 * Math.PI, false);
+			// ctx.fillStyle = 'green';
+			// ctx.fill();
+			// ctx.stroke();
+
+
 			ctx.beginPath();
-			ctx.arc(row, column, 50, 0, 2 * Math.PI, false);
-			ctx.fillStyle = 'green';
-			ctx.fill();
+			// ctx.moveTo(100, 20);
+
+			// bezier curve
+			ctx.lineTo(column, row);
+
+			ctx.lineWidth = 5;
+			ctx.strokeStyle = 'blue';
 			ctx.stroke();
+
+
 		};
 	}
 };
