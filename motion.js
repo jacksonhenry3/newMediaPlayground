@@ -149,8 +149,8 @@ squared = function (pixels, args) {
       			row = PreviousRow+(row-PreviousRow)/divider
       			column = PreviousCol+(column-PreviousCol)/divider
       		}
-			window.place = 
-			lineData.push({x:row,y:column})
+			// window.place = 
+			lineData.push({x:row*2,y:column*2})
 			PreviousRow = row
 			PreviousCol = column
       }
