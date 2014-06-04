@@ -191,25 +191,7 @@ squared = function (pixels, args) {
       d[i] =Math.pow(r/255,power)*255
       d[i+1] =Math.pow(g/255,power)*255
       d[i+2] =Math.pow(b/255,power)*255
-      if (d[i]+d[i+1]+d[i+2] != 255*3)
-      {
-        d[i]=d[i+1]=d[i+2]=0
-      }
-      else
-      {
-        whitePixels.push(i)
-      }
-
-    }
-    for (var j = whitePixels.length - 1; j >= 0; j--) {
-      i = whitePixels[j]
-      if (j != Math.floor(whitePixels.length/2))
-      {
-        d[i]=d[i+1]=d[i+2]=0
-      }
-    };
-
-		
+  }
 
     return pixels;
   };
