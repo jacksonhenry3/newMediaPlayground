@@ -65,7 +65,7 @@ function filterCanvas(filter)
 			
 
 			// bezier curve
-			ctx.lineTo(column, row);
+			ctx.lineTo(row, column);
 
 			ctx.lineWidth = 5;
 			ctx.strokeStyle = 'blue';
