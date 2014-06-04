@@ -6,10 +6,8 @@
 		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	</head>
 	<body>
-		<video autoplay id="vid" style="display:none;"></video>
+		<video autoplay id="vid" style="display:block;float:left;width:640px;height:480px;background:yellow;"></video>
 		<canvas width = '640' height = '480' id="liveFeed" ></canvas>
-		<canvas width = '640' height = '480' id = 'topLayer'></canvas>
-		<button onclick = 'clear = true'>clear</button>
 		<svg id = 'drawingCanvas' width = '640' height = '480' style = 'background-color:red;'></svg>
 	</body>
 	<script type="text/javascript" src = 'motion.js'></script>

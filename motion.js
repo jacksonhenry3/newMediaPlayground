@@ -114,7 +114,7 @@ squared = function (pixels, args) {
       d[i+2] =Math.pow(b/255,power)*255
       if (d[i]+d[i+1]+d[i+2] != 255*3)
       {
-        d[i]=d[i+1]=d[i+2]=255
+        d[i]=d[i+1]=d[i+2]=0
       }
       else
       {
