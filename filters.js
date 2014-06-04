@@ -183,6 +183,7 @@ darker = function (pixels, args) {
 
 squared = function (pixels, args) {
     var d = pixels.data;
+    whitePixels = [];
     for (var i = 0; i < d.length; i += 4) {
       var r = d[i];
       var g = d[i + 1];
@@ -194,7 +195,19 @@ squared = function (pixels, args) {
       {
         d[i]=d[i+1]=d[i+2]=0
       }
+      else
+      {
+        whitePixels.push(i)
+      }
+
     }
+    for (var j = whitePixels.length - 1; j >= 0; j--) {
+      i = whitePixels[j]
+      if (j != Math.floor(whitePixels.length/2))
+      {
+        d[i]=d[i+1]=d[i+2]=0
+      }
+    };
 
 		
 
