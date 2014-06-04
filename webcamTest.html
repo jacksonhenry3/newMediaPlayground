@@ -1,14 +1,15 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>HTML5 Webcam Test</title>
+    <link rel='stylesheet' href='style.css'>
   </head>
-  <body style = 'background-color:#222;'>
+  <body>
     <video autoplay id="vid" style="display:none;">
     </video>
-    <canvas width = '640' height = '480' id="liveFeed" style="border:1px solid #d3d3d3;margin:0px auto;display:block;margin-top:50px;box-shadow:0px 0 100px 50px rgba(0,0,0,.5);background-color:#EEE;">
+    <canvas width = '640' height = '480' id="liveFeed" >
     </canvas>
-    <canvas width = '640' height = '480' id = 'delayed' style = 'display:none;width:80%;'></canvas>
+    <canvas width = '640' height = '480' id = 'delayed'></canvas>
   </body>
   <script type="text/javascript" src = 'filters.js'>
   </script>
@@ -18,7 +19,7 @@
   <button onclick = 'f = blue'> blue</button>
   <button onclick = 'f = whiteLines'>white lines</button>
   <button onclick = 'f = grayscale'> grayscale</button>
-  <button onclick = 'f = blackWhiteAndColor'>black White And Color</button>
+  <button onclick = 'f = blackWhiteAndColor'>BW And Color</button>
   <button onclick = 'f = delay'>delay</button>
   <button onclick = 'f = colorsMod'>mod colors</button>
   <button onclick = 'f = graysMod'>mod grey</button>
