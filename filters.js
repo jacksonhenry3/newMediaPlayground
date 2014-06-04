@@ -188,11 +188,10 @@ darker = function (pixels, args) {
       var r = d[i];
       var g = d[i + 1];
       var b = d[i + 2];
-      d[i] = d[i + 1] = d[i + 2] = (r+g+b)/3-200
       k = i/(w*4)
      	column = Math.ceil(k)
      	row = w*(k-Math.floor(k))
-     	if (r+g+b/3>20){
+     	if ((r+g+b)/3-200>20){
      		d3.select("#vectorMap")
 					.append("circle")
 					.attr("cx", column)
