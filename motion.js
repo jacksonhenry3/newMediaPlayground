@@ -46,7 +46,6 @@ function filterCanvas(filter)
 		var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 		filter(imageData);
 		ctx.putImageData(imageData, 0, 0);
-		for (var i = 0; i < window.places.length; i++) {
 			row = window.place[0]
 			column = window.place[1]
 			// r = window.places[i][2][0]
@@ -71,8 +70,6 @@ function filterCanvas(filter)
 			ctx.strokeStyle = 'blue';
 			ctx.stroke();
 
-
-		};
 	}
 };
 
