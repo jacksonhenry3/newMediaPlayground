@@ -16,7 +16,7 @@ var video     = document.querySelector("#vid"),
 var lineFunction = d3.svg.line()
                          .x(function(d) { return d.x; })
                          .y(function(d) { return d.y; })
-                         .interpolate("step-before");
+                         .interpolate("basis");
 
 //The SVG Container
 var svgContainer = d3.select("#drawingCanvas")
