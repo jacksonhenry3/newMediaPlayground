@@ -1,59 +1,85 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <style>
-      body {
-        margin: 0px;
-        padding: 0px;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="myCanvas" width="578" height="400"></canvas>
-    <script>
-      var canvas = document.getElementById('myCanvas');
-      var ctx = canvas.getContext('2d');
-      var imageObj = new Image();
+	<head>
+		<style>
+			body 
+			{
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500" height="200"></canvas>
+		<canvas id="origin" width="500" height="200"></canvas>
+		<input id = 'modr' type = 'range' min = '0' max = '256'></input>
+		<input id = 'modg' type = 'range' min = '0' max = '256'></input>
+		<input id = 'modb' type = 'range' min = '0' max = '256'></input>
+		<script>
+			var canvas = document.getElementById('myCanvas');
+			canvas.width = width = 470;
+			var ctx = canvas.getContext('2d');
 
-      imageObj.onload = function() {
-        ctx.drawImage(imageObj, 0, 0);
-        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        modN = 10
-		filterCanvas(colorsMod)
-		ctx.putImageData(imageData, 0, 0);
-      };
-      imageObj.src = 'http://content.mycutegraphics.com/graphics/rainbow/colorful-rainbow.png';
+			var origin = document.getElementById('origin');
+			origin.width = width = 470;
+			var OrCtx = origin.getContext('2d');
 
+			function drawrainbow()
+			{
+				var gradient = OrCtx.createLinearGradient(0, 0, 500, 0);  
+				gradient.addColorStop(0, 'red');  
+				gradient.addColorStop(1 / 6, 'orange');  
+				gradient.addColorStop(2 / 6, 'yellow');  
+				gradient.addColorStop(3 / 6, 'green');  
+				gradient.addColorStop(4 / 6, 'blue');  
+				gradient.addColorStop(5 / 6, 'indigo');  
+				gradient.addColorStop(1, 'violet');  
+				OrCtx.fillStyle = gradient;  
+				OrCtx.fillRect(0, 0, 500, 200);  
+			};
+			drawrainbow()
 
-       
+			var imageData = OrCtx.getImageData(0, 0, canvas.width, canvas.height);
 
+			function filterCanvas(filter)
+			{
+				if (canvas.width > 0 && canvas.height > 0)
+				{
+					var imageData = OrCtx.getImageData(0, 0, canvas.width, canvas.height);
+					filter(imageData);
+					ctx.putImageData(imageData, 0, 0);
+				}
+			}
 
+			colorsMod = function (pixels, args)
+			{
+				
+				var d = pixels.data;
+				for (var i = 0; i < d.length; i += 4)
+				{
+					var r = d[i];
+					var g = d[i + 1];
+					var b = d[i + 2];
+					d[i] = (r%modr)/modr*255
+					d[i + 1] =  (g%modg)/modg*255
+					d[i + 2] = (b%modb)/modb*255
+				}
+				return pixels;
+			};
+			
+			rd = document.getElementById('modr')
+			gr = document.getElementById('modg')
+			bl = document.getElementById('modb')
+			window.setInterval(begin,50)
+			function begin()
+			{
+				modr = rd.value;
+				modg = gr.value;
+				modb = bl.value;
 
-   // apply a filter to the image data contained in the canvas object
-  function filterCanvas(filter) {
-    if (canvas.width > 0 && canvas.height > 0) {
-      var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      filter(imageData);
-      ctx.putImageData(imageData, 0, 0);
-    }
-  }
+				filterCanvas(colorsMod)
+			}
 
-colorsMod = function (pixels, args) {
-  var d = pixels.data;
-  for (var i = 0; i < d.length; i += 4) {
-  	var r = d[i];
-    var g = d[i + 1];
-    var b = d[i + 2];
-    if (r>modN || g>modN || b>modN)
-    	d[i] = (r-modN*Math.floor(r/modN))*255/(modN-1);
-    	d[i + 1] =  (g-modN*Math.floor(g/modN))*255/(modN-1);
-      d[i + 2] = (b-modN*Math.floor(b/modN))*255/(modN-1);
-  }
-  return pixels;
-};
-
-
-
-    </script>
-  </body>
+		</script>
+	</body>
 </html> 
