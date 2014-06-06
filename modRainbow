@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="400"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      var imageObj = new Image();
+
+      imageObj.onload = function() {
+        ctx.drawImage(imageObj, 0, 0);
+        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        modN = 10
+		filterCanvas(colorsMod)
+		ctx.putImageData(imageData, 0, 0);
+      };
+      imageObj.src = 'http://content.mycutegraphics.com/graphics/rainbow/colorful-rainbow.png';
+
+
+       
+
+
+
+   // apply a filter to the image data contained in the canvas object
+  function filterCanvas(filter) {
+    if (canvas.width > 0 && canvas.height > 0) {
+      var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      filter(imageData);
+      ctx.putImageData(imageData, 0, 0);
+    }
+  }
+
+colorsMod = function (pixels, args) {
+  var d = pixels.data;
+  for (var i = 0; i < d.length; i += 4) {
+  	var r = d[i];
+    var g = d[i + 1];
+    var b = d[i + 2];
+    if (r>modN || g>modN || b>modN)
+    	d[i] = (r-modN*Math.floor(r/modN))*255/(modN-1);
+    	d[i + 1] =  (g-modN*Math.floor(g/modN))*255/(modN-1);
+      d[i + 2] = (b-modN*Math.floor(b/modN))*255/(modN-1);
+  }
+  return pixels;
+};
+
+
+
+    </script>
+  </body>
+</html> 
