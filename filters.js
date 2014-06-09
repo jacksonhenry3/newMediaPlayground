@@ -115,9 +115,10 @@ n.getUserMedia(
     var d = pixels.data;
     for (var i = 0; i < d.length/2; i += 4) {
         j = d.length-i
+        if (d[i]>155){
         d[j] = d[i]
         d[j+1] = d[i+1]
-        d[j+2] = d[i+2]
+        d[j+2] = d[i+2]}
 
     }
     return pixels;
