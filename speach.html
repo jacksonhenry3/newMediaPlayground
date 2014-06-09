@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Raleway:200,800' rel='stylesheet' type='text/css'>
 <title>Web Speech API Demo</title>
 <style>
   * {
-    font-family: Verdana, Arial, sans-serif;
+    font-family: Raleway, Arial, sans-serif;
   }
   a:link {
     color:#000;
@@ -81,10 +82,9 @@
   }
 </style>
 <h1 class="center" id="headline">
-  <a href="http://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">
-    Web Speech API</a> Demonstration</h1>
+  In browser voice recognition</h1>
 <div id="info">
-  <p id="info_start">Click on the microphone icon and begin speaking.</p>
+  <p id="info_start">Click accept to begin listening.</p>
   <p id="info_speak_now">Speak now.</p>
   <p id="info_no_speech">No speech was detected. You may need to adjust your
     <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
@@ -111,21 +111,21 @@
   <p>
 </div>
 <div class="center">
-  <div class="sidebyside" style="text-align:right">
+<!--   <div class="sidebyside" style="text-align:right">
     <button id="copy_button" class="button" onclick="copyButton()">
       Copy and Paste</button>
     <div id="copy_info" class="info">
       Press Control-C to copy text.<br>(Command-C on Mac.)
     </div>
-  </div>
-  <div class="sidebyside">
+  </div> -->
+<!--   <div class="sidebyside">
     <button id="email_button" class="button" onclick="emailButton()">
       Create Email</button>
     <div id="email_info" class="info">
       Text sent to default email application.<br>
       (See chrome://settings/handlers to change.)
     </div>
-  </div>
+  </div> -->
   <p>
   <div id="div_language">
     <select id="select_language" onchange="updateCountry()"></select>
