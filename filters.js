@@ -113,15 +113,12 @@ n.getUserMedia(
 
   mirror = function (pixels, args) {
     var d = pixels.data;
-    for (var i = 0; i < d.length; i += 4) {
-      
-      if (i<640/2)
-      {
-        j = 320-i
+    for (var i = 0; i < d.length/2; i += 4) {
+        j = length-i
         d[j] = d[i]
         d[j+1] = d[i+1]
         d[j+2] = d[i+2]
-      }
+
     }
     return pixels;
   };
