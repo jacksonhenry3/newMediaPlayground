@@ -10,6 +10,7 @@
 		</style>
 	</head>
 	<body>
+		<input x-webkit-speech>
 		<canvas id="myCanvas" width="500" height="200"></canvas>
 		<canvas id="origin" width="500" height="200"></canvas>
 		<input id = 'modr' type = 'range' min = '0' max = '256'></input>
@@ -80,6 +81,19 @@
 				filterCanvas(colorsMod)
 			}
 
+			var recognition = new webkitSpeechRecognition();
+			recognition.continuous = true;
+			recognition.interimResults = true;
+			recognition.lang = "en";
+			recognition.start();
+			recognition.stop();
+			recognition.onresult = function (event) {
+			    for (var i = event.resultIndex; i < event.results.length; ++i) {
+			        if (event.results[i].isFinal) {
+			            insertAtCaret(textAreaID, event.results[i][0].transcript);
+			        }
+			    }
+			};
 		</script>
 	</body>
 </html> 
