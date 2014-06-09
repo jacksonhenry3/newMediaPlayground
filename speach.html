@@ -103,7 +103,7 @@
 </div>
 <div class="right">
   <button id="start_button" onclick="startButton(event)">
-    <img id="start_img" src="mic.gif" alt="Start"></button>
+    <!-- <img id="start_img" src="mic.gif" alt="Start"></button> -->
 </div>
 <div id="results">
   <span id="final_span" class="final"></span>
@@ -347,11 +347,11 @@ function emailButton() {
   showInfo('');
 }
 
-function startButton(event) {
-  if (recognizing) {
-    recognition.stop();
-    return;
-  }
+// function startButton(event) {
+//   if (recognizing) {
+//     recognition.stop();
+//     return;
+//   }
   final_transcript = '';
   recognition.lang = select_dialect.value;
   recognition.start();
@@ -362,7 +362,6 @@ function startButton(event) {
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
-}
 
 function showInfo(s) {
   if (s) {
