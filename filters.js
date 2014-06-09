@@ -119,7 +119,7 @@ n.getUserMedia(
       {
         j = 320-i
         d[j] = d[i]
-        d[j+1] = d[i+@]
+        d[j+1] = d[i+1]
         d[j+2] = d[i+2]
       }
     }
